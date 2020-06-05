@@ -10,7 +10,24 @@ class Homepage extends React.Component{
 
     componentDidMount()
     {
-        
+        API.getRandomEmployees().then(data => {
+            console.log(data);
+            let newSet = [];
+            data.data.results.forEach(employeeData => {
+                const newEmployee = { //Error
+                    firstName: employeeData.name.first,
+                    lastName: employeeData.name.last,
+                    image: employeeData.picture.thumbnail,
+                    phoneNumber: employeeData.phone,
+                    email: employeeData.email,
+                    birthday: employeeData.dob
+                }
+                newSet.push(newEmployee);
+            });
+            this.setState({employees: newSet});
+        }).catch(err => {
+            throw err;
+        });
     }
 
     render()
