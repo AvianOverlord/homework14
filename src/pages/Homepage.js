@@ -29,9 +29,16 @@ class Homepage extends React.Component{
                 </thead>
                 <tbody>
                     {
-                        /*this.state.employees.map( employee => (
-                            <Entry/>
-                        ))*/
+                        this.state.employees.map( employee => (
+                            <Entry
+                                firstName = {employee.firstName}
+                                lastName = {employee.lastName}
+                                image = {employee.image}
+                                phoneNumber = {employee.phoneNumber}
+                                email = {employee.email}
+                                birthday = {employee.birthday}
+                            />
+                        ))
                     }
                 </tbody>
             </table>
