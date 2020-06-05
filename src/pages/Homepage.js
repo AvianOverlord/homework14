@@ -1,10 +1,11 @@
 import React from "react";
 import API from "../util/API";
 import Header from "../components/Header";
+import Entry from "../components/Entry"
 
 class Homepage extends React.Component{
     state = {
-
+        employees: []
     }
 
     componentDidMount()
@@ -15,6 +16,7 @@ class Homepage extends React.Component{
     render()
     {
         return(<>
+            <Header></Header>
             <table className="table">
                 <thead>
                     <tr>
@@ -27,9 +29,9 @@ class Homepage extends React.Component{
                 </thead>
                 <tbody>
                     {
-                        this.state.employees.map( employee => (
+                        /*this.state.employees.map( employee => (
                             <Entry/>
-                        ))
+                        ))*/
                     }
                 </tbody>
             </table>
